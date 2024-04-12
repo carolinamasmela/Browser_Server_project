@@ -16,18 +16,18 @@ def createServer():
                            se muestra un mensaje de error junto con detalles sobre la excepción.
     """
     # Configuración del servidor
-    server = socket(AF_INET, SOCK_STREAM)
+    server = socket(AF_INET, SOCK_STREAM) #endpoint #phone
     try:
-        server.bind(('localhost', 9000))
+        server.bind(('localhost', 9000)) #phonecall
         server.listen(5)
 
         # Bucle principal del servidor
-        while True:
-            # Acepta una conexión entrante
+        while (1):
+            # Cliente acepta una conexión entrante
             (clientsocket, address) = server.accept()
 
             # Recibe la solicitud del cliente
-            request_data = (clientsocket.recv(5000).decode())
+            request_data = (clientsocket.recv(5000).decode()) #funcion receive y send son igual
             request_lines = request_data.split('\n')
 
             # Imprime la primera línea de la solicitud (generalmente el método y la ruta HTTP)
@@ -53,4 +53,5 @@ def createServer():
         print(exc)
 
 # Ejecuta la función para iniciar el servidor
+print('Access http://localhost:9000')
 createServer()
