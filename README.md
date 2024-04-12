@@ -11,7 +11,10 @@ GET /favicon.ico HTTP/1.1
 
 simple web client
 
-
-client1.py
+#contacto con el servidor 
 #tener servidor prendido paso anterior
+
+
 python client1.py
+python client2.py
+
